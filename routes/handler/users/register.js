@@ -39,10 +39,11 @@ module.exports = async (req, res) => {
   };
 
   const createUser = await User.create(data);
+
   return res.json({
     status: "success",
     data: {
-      id: createUser,
+      id: createUser.id,
     },
   });
 };

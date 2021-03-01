@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const { User } = require("../../../models/User");
+const { User } = require("../../../models");
 const Validator = require("fastest-validator");
 const v = new Validator();
 
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
   if (!user) {
     return res.status(404).json({
       status: "error",
-      message: "accound not found",
+      message: "user not found",
     });
   }
 
